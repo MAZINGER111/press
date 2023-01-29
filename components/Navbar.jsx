@@ -21,10 +21,6 @@ const Navbar = () => {
                     <li className="w-[100px] text-center py-[29px]">Blog</li>
                 </Link>
             </ul>
-            <div className="flex items-center">
-                <p className="mr-[26px]">Log in</p>
-                <button className="px-[18px] py-3 text-white bg-primary">Sign up</button>
-            </div>
         </div>
     )
 }

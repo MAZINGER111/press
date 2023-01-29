@@ -28,7 +28,7 @@ const DashboardLayout = ({ children }) => {
                         <li className="mb-2 p-4 rounded-[4px]">Blog</li>
                     </Link>
                 </ul>
-                <div className="flex-1 pl-[22px]">
+                <div className="flex-1 pl-[22px] pr-[25px]">
                     {children}
                 </div>
             </div>
