@@ -1,0 +1,11 @@
+.container p, .container span, .container input, .container button, .container select, .container option {
+    @apply font-[400] text-[14px] leading-[17px]
+}
+
+.container input, .container textarea, .container select {
+    @apply border border-[#d9d9d9]
+}
+
+.container .bolden p{
+    @apply font-[500]
+}
