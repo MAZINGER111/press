@@ -9,24 +9,24 @@ export default function Home() {
   return (
     <Layout>
       <div className='mb-[60px]'>
-        <div className='h-[400px] mx-10 mt-[73px] bg-[#F0F0F0] flex items-center justify-center'>
+        <div className='h-[400px] mx-5 sm:mx-10 mt-[73px] bg-[#F0F0F0] flex items-center justify-center'>
           <p className='opacity-50'>Heat Map</p>
         </div>
-        <div className='mx-10'>
+        <div className='mx-5 sm:mx-10'>
 
           <p className='leading-[140%] font-[400] text-[18px] text-center mb-6 mt-[70px]'>Be rest assured that the anyone reporting an incident has their data secured with us and will not be leaked</p>
           <button className='py-3 px-[18px] bg-[#FDC401] block mx-auto text-[#3E3E3E] text-[16px] font-[500] leading-[19px] relative z-10'>
             Report an attack
           </button>
           <p className='text-center mt-[73px] text-[36px] leading-[43px] font-[600] mb-4'>Our Partners</p>
-          <div className='flex justify-around items-center'>
+          <div className='flex justify-around items-center flex-wrap gap-y-'>
             <img className='w-[175px] h-[175px]' src="/images/free-press.png" alt="" />
             <img className='w-[359px] h-[126px]' src="/images/cwppf.png" alt="" />
             <img className='w-[185px] h-[117px]' src="/images/mldi.png" alt="" />
           </div>
 
           <p className='font-[600] text-[24px] mb-[30] mt-[81px]'>Frequently Asked Questions</p>
-          <div className='px-[31px]'>
+          <div className='sm:px-[31px]'>
             <Faq />
             <Faq />
             <Faq />

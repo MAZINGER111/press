@@ -1,6 +1,13 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const DashboardLayout = ({ children }) => {
+    const { pathname } = useRouter()
+    console.log(pathname)
+    function isActive(tab){
+        if(pathname === `/dashboard${tab}`) return 'bg-yellow'
+        return ''
+    }
     return (
         <div>
             <div className="flex items-center justify-between bg-[#3E3E3E] py-3 px-6">
@@ -13,22 +20,22 @@ const DashboardLayout = ({ children }) => {
             <div className="flex">
                 <ul className="w-[250px] px-4 pt-4">
                     <Link href="/dashboard">
-                        <li className="mb-2 p-4  rounded-[4px]">Dashboard</li>
+                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('')}`}>Dashboard</li>
                     </Link>
                     <Link href="/dashboard/admin">
-                        <li className="mb-2 p-4 rounded-[4px] bg-yellow">Admin</li>
+                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/admin')}`}>Admin</li>
                     </Link>
                     <Link href="/dashboard/reports">
-                        <li className="mb-2 p-4 rounded-[4px]">Manage Reports</li>
+                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/reports')}`}>Manage Reports</li>
                     </Link>
                     <Link href="/dashboard/stories">
-                        <li className="mb-2 p-4 rounded-[4px]">Stories</li>
+                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/stories')}`}>Stories</li>
                     </Link>
                     <Link href="/dashboard/blog">
-                        <li className="mb-2 p-4 rounded-[4px]">Blog</li>
+                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/blog')}`}>Blog</li>
                     </Link>
                 </ul>
-                <div className="flex-1 pl-[22px] pr-[25px]">
+                <div className="flex-1 pl-[22px] pr-[25px] pt-6">
                     {children}
                 </div>
             </div>

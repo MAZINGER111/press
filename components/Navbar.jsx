@@ -1,6 +1,12 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const Navbar = () => {
+    const { pathname } = useRouter()
+    function checkActive(tab){
+        if(pathname === tab) return 'border-[#1C2022] border-b-[4px]'
+        return ''
+    }
     return (
         <div className="flex items-center px-6">
             <div className="flex items-center">
@@ -10,15 +16,15 @@ const Navbar = () => {
                     <p className="italic text-[#1F215F] leading-[19px] text-[15px] font-[400]">TRACKER</p>
                 </div>
             </div>
-            <ul className="flex mx-auto">
+            <ul className="hidden sm:flex mx-auto">
                 <Link href="/">
-                    <li className="w-[100px] border-[#1C2022] border-b-[4px] text-center mr-[85px] py-[29px]">Home</li>
+                    <li className={`w-[100px] text-center mr-[85px] py-[29px] ${checkActive("/")}`}>Home</li>
                 </Link>
                 <Link href="/reports">
-                    <li className="w-[100px] text-center mr-[85px] py-[29px]">Reports</li>
+                    <li className={`w-[100px] text-center mr-[85px] py-[29px] ${checkActive("/reports")}`}>Reports</li>
                 </Link>
                 <Link href="/blog">
-                    <li className="w-[100px] text-center py-[29px]">Blog</li>
+                    <li className={`w-[100px] text-center py-[29px] ${checkActive("/blog")}`}>Blog</li>
                 </Link>
             </ul>
         </div>
