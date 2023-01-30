@@ -1,40 +1,24 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
+import { useState } from "react"
+import Sidebar from "./Sidebar"
 
 const DashboardLayout = ({ children }) => {
-    const { pathname } = useRouter()
-    console.log(pathname)
-    function isActive(tab){
-        if(pathname === `/dashboard${tab}`) return 'bg-yellow'
-        return ''
-    }
+    const [showSidebar, setShowSidebar] = useState(false)
+    
     return (
         <div>
-            <div className="flex items-center justify-between bg-[#3E3E3E] py-3 px-6">
-                <div>
+            <div className="flex relative items-center justify-between bg-[#3E3E3E] py-3 px-6">
+                {showSidebar
+                    ? <img src="/images/cancel.png" onClick={() => setShowSidebar(false)} className="absolute ml-2 h-5 invert-[1] w-5 left-3 sm:hidden" alt="" />
+                    : <img src="/images/menu.png" onClick={() => setShowSidebar(true)} className="absolute h-10 w-10 invert-[1] left-3 sm:hidden" alt="" />
+                }
+                <div className="ml-10 sm:ml-0">
                     <p className="text-yellow text-[24px] font-[600] leading-[29px]">PAT</p>
                     <p className="text-white">Admin</p>
                 </div>
                 <p className="text-yellow text-[14px] leading-[17px]">Welcome, Monsur Hussain</p>
             </div>
             <div className="flex">
-                <ul className="w-[250px] px-4 pt-4 hidden sm:block">
-                    <Link href="/dashboard">
-                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('')}`}>Dashboard</li>
-                    </Link>
-                    <Link href="/dashboard/admin">
-                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/admin')}`}>Admin</li>
-                    </Link>
-                    <Link href="/dashboard/reports">
-                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/reports')}`}>Manage Reports</li>
-                    </Link>
-                    <Link href="/dashboard/stories">
-                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/stories')}`}>Stories</li>
-                    </Link>
-                    <Link href="/dashboard/blog">
-                        <li className={`mb-2 p-4 rounded-[4px] ${isActive('/blog')}`}>Blog</li>
-                    </Link>
-                </ul>
+                <Sidebar showSidebar={showSidebar}/>
                 <div className="flex-1 pl-[22px] pr-[25px] pt-6">
                     {children}
                 </div>

@@ -31,3 +31,7 @@ input, textarea{
   @apply focus:border-none focus:outline-none
 }
 
+
+.slide-in{
+  @apply right-6
+}
