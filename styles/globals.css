@@ -27,6 +27,7 @@ button{
 
 input, textarea{
   @apply placeholder:opacity-50 placeholder:font-[400] placeholder:text-[17px] placeholder:text-[#1c1b1f];
-  @apply bg-[#F5F5F5] pl-[15px] pt-[19px] pb-[17px] block w-full resize-none
+  @apply bg-[#F5F5F5] pl-[15px] pt-[19px] pb-[17px] block w-full resize-none;
+  @apply focus:border-none focus:outline-none
 }
 

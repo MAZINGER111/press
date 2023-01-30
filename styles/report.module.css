@@ -1,0 +1,8 @@
+.container {
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.1);
+    @apply px-5 sm:px-8 py-6
+}
+.container input, .container select, .container option, .container textarea {
+    @apply bg-[#f5f5f5] px-4 pt-[19px] pb-[17px] mb-4 text-[#1c1b1f]/50 text-[18px] leading-[22px];
+    @apply placeholder:text-[#1c1b1f]  placeholder:text-[18px] placeholder:leading-[22px];
+}

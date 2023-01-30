@@ -12,13 +12,13 @@ export const MinusIcon = ({ onClick, className }) => (
 
 export const BackArrow = ({ onClick, className }) => (
     <svg className={className} onClick={onClick} width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 8.46899L6.25 15.969L7.65 14.219L3.075 8.46899L7.65 2.71899L6.25 0.968994L0.25 8.46899Z" fill="#1C1B1F" />
+        <path fillRule="evenodd" clipRule="evenodd" d="M0.25 8.46899L6.25 15.969L7.65 14.219L3.075 8.46899L7.65 2.71899L6.25 0.968994L0.25 8.46899Z" fill="#1C1B1F" />
     </svg>
 )
 
 export const ForwardArrow = ({ onClick, className }) => (
     <svg onClick={onClick} className={className} width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 8.46899L2.25 15.969L0.85 14.219L5.425 8.46899L0.85 2.71899L2.25 0.968994L8.25 8.46899Z" fill="#1C1B1F" />
+        <path fillRule="evenodd" clipRule="evenodd" d="M8.25 8.46899L2.25 15.969L0.85 14.219L5.425 8.46899L0.85 2.71899L2.25 0.968994L8.25 8.46899Z" fill="#1C1B1F" />
     </svg>
 )
 

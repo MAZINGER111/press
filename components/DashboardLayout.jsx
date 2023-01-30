@@ -18,7 +18,7 @@ const DashboardLayout = ({ children }) => {
                 <p className="text-yellow text-[14px] leading-[17px]">Welcome, Monsur Hussain</p>
             </div>
             <div className="flex">
-                <ul className="w-[250px] px-4 pt-4">
+                <ul className="w-[250px] px-4 pt-4 hidden sm:block">
                     <Link href="/dashboard">
                         <li className={`mb-2 p-4 rounded-[4px] ${isActive('')}`}>Dashboard</li>
                     </Link>

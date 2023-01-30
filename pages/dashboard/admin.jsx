@@ -9,8 +9,8 @@ const Admin = () => {
     return (
         <DashboardLayout>
             <div className={style.container}>
-                <div className="flex justify-between items-center mt-6 mb-[22px]">
-                    <p className=" text-[24px] leading-[29px] text-[#3E3E3E]">Admin</p>
+                <div className="flex justify-between items-center mb-[22px]">
+                    <h2 className="text-[24px] leading-[29px] text-[#3e3e3e] font-[400]">Admin</h2>
                     <button className="bg-yellow px-4 py-3  text-[#3E3E3E] rounded">Add New Admin</button>
                 </div>
                 <div className="grid grid-cols-4 border-b pb-4 pt-[18px]">
@@ -23,7 +23,7 @@ const Admin = () => {
                     <p className=" text-[#929292]">1</p>
                     <p className=" text-[#929292]">Monsur123</p>
                     <p className=" text-[#929292]">mhussain@pta.com</p>
-                    <div className="flex ">
+                    <div className="flex flex-col sm:flex-row">
                         <button onClick={() => setEditModal(true)} className="border bg-white border-[#003DA6] text-[#003DA6] rounded-[4px]  px-4 py-3">Edit</button>
                         <button onClick={() => setDeleteModal(true)} className="bg-danger px-4 py-3 ml-4 rounded-lg text-white ">Delete</button>
                     </div>

@@ -8,7 +8,7 @@ const Reports = () => {
     return (
         <DashboardLayout>
             <div className={style.container}>
-                <div className="flex justify-between mt-8 mb-3">
+                <div className="flex justify-between mb-3">
                     <h2 className="text-[24px] leading-[29px] text-[#3e3e3e] font-[400]">Manage Reports</h2>
 
                 </div>

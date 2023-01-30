@@ -1,64 +1,77 @@
+import { useState } from 'react'
 import Layout from '../../components/Layout'
 import { BackArrow, DownArrow, ForwardArrow } from '../../components/Svgs'
+import style from '../../styles/report.module.css'
 const Reports = () => {
+    const [showForm, setShowForm] = useState(false)
     return (
         <Layout>
-            <div className='mx-10 mt-[75px] mb-10'>
-                <p className='leading-[140%] font-[400] text-[18px] text-center mb-6'>Be rest assured that the anyone reporting an incident has their data secured with us and will not be leaked</p>
-                <button className='py-3 px-[18px] bg-[#FDC401] block mx-auto text-[#3E3E3E] text-[16px] font-[500] leading-[19px] relative z-10'>
-                    Report an attack
-                    {/* <div className="absolute bg-[#B5B5B5] blur-[15px] w-[141px] h-[23px] -bottom-2 z[-1]"></div> */}
-                </button>
-                <div className='flex justify-between mb-10 mt-[89px]'>
-                    <input type="text" placeholder='Search Stories' className='placeholder:opacity-50' />
-                    <div className='flex items-center'>
-                        <p>January</p>
-                        <DownArrow className="ml-[45px] mr-[57px]" />
-                        <p>2022</p>
-                        <DownArrow className="ml-[45px] mr-[57px]" />
-                        <p>Nigeria</p>
-                        <DownArrow className="ml-[45px] mr-[57px]" />
-                    </div>
-                </div>
-                <div className="grid grid-cols-4 gap-x-6">
-                    <ReportCard />
-                    <ReportCard />
-                    <ReportCard />
-                    <ReportCard />
-                </div>
-                <div className='mt-[104px] mb-[51px] flex justify-between'>
-                    <p>Page 1 of 10 - 30</p>
-                    <div className='flex items-center'>
-                        <BackArrow className="mr-[13px]" />
-                        <p className='mr-[33px] font-[400]'>Previous</p>
-                        <div className='grid grid-cols-3 gap-x-[14px]'>
-                            <p className='py-[6px] px-[14px] bg-black text-white'>1</p>
-                            <p className='py-[6px] px-[14px]'>2</p>
-                            <p className='py-[6px] px-[14px]'>3</p>
+            {!showForm &&
+                <div className='mx-5 sm:mx-10 mt-[75px] mb-10'>
+                    <p className='leading-[140%] font-[400] text-[18px] text-center mb-6'>Be rest assured that the anyone reporting an incident has their data secured with us and will not be leaked</p>
+                    <button onClick={() => setShowForm(true)} className='py-3 px-[18px] bg-[#FDC401] block mx-auto text-[#3E3E3E] text-[16px] font-[500] leading-[19px] relative z-10'>
+                        Report an attack
+                        {/* <div className="absolute bg-[#B5B5B5] blur-[15px] w-[141px] h-[23px] -bottom-2 z[-1]"></div> */}
+                    </button>
+                    <div className='flex flex-col sm:flex-row justify-between mb-10 mt-[89px]'>
+                        <input type="text" placeholder='Search Stories' className='placeholder:opacity-50' />
+                        <div className='flex items-center mt-2 sm:mt-0'>
+                            <p>January</p>
+                            <DownArrow className="ml-3 mr-12 sm:ml-[45px] sm:mr-[57px]" />
+                            <p>2022</p>
+                            <DownArrow className="ml-3 mr-12 sm:ml-[45px] sm:mr-[57px]" />
+                            <p>Nigeria</p>
+                            <DownArrow className="ml-3 sm:ml-[45px] sm:mr-[57px]" />
                         </div>
-                        <p className='ml-[33px]'>Next</p>
-                        <ForwardArrow className="ml-[13px]" />
                     </div>
-                </div>
-                <div className="grid grid-cols-2 gap-x-6 mt-[130px]">
-                    <div>
-                        <p className='text-[24px] font-[400]'>Leave A Comment</p>
-                        <p className='font-[400] text-[#929292] mt-2'>Everyone Gets To See The Comments You Post</p>
-                        <textarea className='mt-[18px] h-[150px]' placeholder='Comment' name="" id="" ></textarea>
-                        <input className='my-4 ' type="text" placeholder='Name' />
-                        <input className='mb-[34px]' type="text" placeholder='Email' />
-                        <button className='block ml-auto'>Submit Comment</button>
+                    <div className="grid sm:grid-cols-4 gap-x-6 gap-y-14">
+                        <ReportCard />
+                        <ReportCard />
+                        <ReportCard />
+                        <ReportCard />
                     </div>
-                    <div>
-                        <div className="w-fit ml-auto">
-                            <span className='text-[32px] leading-[39px] font-[600] text-black block'>12</span>
-                            <span className='text-black opacity-50 mt-2'>Comment(s)</span>
+                    <div className='mt-[104px] mb-[51px] flex flex-col gap-y-6 sm:flex-row justify-between'>
+                        <p>Page 1 of 10 - 30</p>
+                        <div className='flex items-center'>
+                            <BackArrow className="mr-[13px]" />
+                            <p className='mr-[33px] font-[400]'>Previous</p>
+                            <div className='grid grid-cols-3 gap-x-[14px]'>
+                                <p className='py-[6px] px-[14px] bg-black text-white'>1</p>
+                                <p className='py-[6px] px-[14px]'>2</p>
+                                <p className='py-[6px] px-[14px]'>3</p>
+                            </div>
+                            <p className='ml-[33px]'>Next</p>
+                            <ForwardArrow className="ml-[13px]" />
                         </div>
-                        <Comment />
-                        <Comment />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-x-6 mt-[130px]">
+                        <div>
+                            <p className='text-[24px] font-[400]'>Leave A Comment</p>
+                            <p className='font-[400] text-[#929292] mt-2'>Everyone Gets To See The Comments You Post</p>
+                            <textarea className='mt-[18px] h-[150px]' placeholder='Comment' name="" id="" ></textarea>
+                            <input className='my-4 ' type="text" placeholder='Name' />
+                            <input className='mb-[34px]' type="text" placeholder='Email' />
+                            <button className='block ml-auto'>Submit Comment</button>
+                        </div>
+                        <div className='mt-14 sm:mt-0'>
+                            <div className="w-fit ml-auto">
+                                <span className='text-[32px] leading-[39px] font-[600] text-black block'>12</span>
+                                <span className='text-black opacity-50 mt-2'>Comment(s)</span>
+                            </div>
+                            <Comment />
+                            <Comment />
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+            {showForm && 
+                <div className='grid sm:grid-cols-2 gap-x-6 mt-7 mb-[88px]'>
+                    <div className='bg-[#f5f5f5] h-full'>
+
+                    </div>
+                    <ReportForm />
+                </div>
+            }
         </Layout>
     )
 }
@@ -95,3 +108,37 @@ const Comment = () => (
         <p className='mt-4'>Reply</p>
     </div>
 )
+
+const ReportForm = () => {
+    return (
+        <div className={style.container}>
+            <p>Report Attack</p>
+            <p className='text-[#1c1b1f]/50 text-[16px] leading-[19px] mt-2 mb-4'>Fill in The Details of The Attack You Would Like To Report And the Information Would Be Verified</p>
+            <div className="grid grid-cols-2 gap-x-[15px]">
+                <input type="date" placeholder='Date'/>
+                <input type="text" placeholder="Author (Optional)" />
+            </div>
+            <input type="text" placeholder="Title" />
+            <div className="grid sm:grid-cols-2 gap-x-[15px]">
+                <input type="text" name="" placeholder="Victim Affiliation" id="" />
+                <select name="" id="" placeholder="Type of Attack">
+                    <option value="">Gender</option>
+                </select>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-x-[15px]">
+                <input type="text" name="" placeholder="Victim Affiliation" id="" />
+                <select name="" id="" placeholder="Type of Attack">
+                    <option value="">Type Of Attack</option>
+                </select>
+            </div>
+            <input type="text" name="" placeholder="Location" id="" />
+            <textarea className='h-[200px]' name="" placeholder="Description" id="" ></textarea>
+            <div className="flex items-center mb-4">
+                <button>Choose File</button>
+                <p className="ml-6">No file Chosen</p>
+            </div>
+            <p className='mt-[11px] mb-11 text-[#9c3b3b] font-[400] text-[18px] leading-[22px]'>Upload a picture or video evidence that includes time stamps</p>
+            <button className="px-6 py-4 bg-yellow text-[#3e3e3e] text-[18px] leading-[22px] block ml-auto">Report Attack</button>
+        </div>
+    )
+}
