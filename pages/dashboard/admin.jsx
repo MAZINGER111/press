@@ -13,19 +13,19 @@ const Admin = () => {
                     <h2 className="text-[24px] leading-[29px] text-[#3e3e3e] font-[400]">Admin</h2>
                     <button className="bg-yellow px-4 py-3  text-[#3E3E3E] rounded">Add New Admin</button>
                 </div>
-                <div className="grid grid-cols-4 border-b pb-4 pt-[18px]">
+                <div className="grid grid-cols-11 sm:grid-cols-4 border-b pb-4 pt-[18px]">
                     <p className="text-[#3e3e3e]">SN</p>
-                    <p className="text-[#3e3e3e]">Username</p>
-                    <p className="text-[#3e3e3e]">Email</p>
-                    <p className="text-[#3e3e3e]">Action</p>
+                    <p className="text-[#3e3e3e] col-span-3 sm:col-span-1">Username</p>
+                    <p className="text-[#3e3e3e] col-span-5 sm:col-span-1">Email</p>
+                    <p className="text-[#3e3e3e] col-span-2 sm:col-span-1 text-center sm:text-left">Action</p>
                 </div>
-                <div className="grid grid-cols-4 border-b items-center py-[21px]">
+                <div className="grid grid-cols-11 sm:grid-cols-4 border-b items-center py-[21px]">
                     <p className=" text-[#929292]">1</p>
-                    <p className=" text-[#929292]">Monsur123</p>
-                    <p className=" text-[#929292]">mhussain@pta.com</p>
-                    <div className="flex flex-col sm:flex-row">
-                        <button onClick={() => setEditModal(true)} className="border bg-white border-[#003DA6] text-[#003DA6] rounded-[4px]  px-4 py-3">Edit</button>
-                        <button onClick={() => setDeleteModal(true)} className="bg-danger px-4 py-3 ml-4 rounded-lg text-white ">Delete</button>
+                    <p className=" text-[#929292] col-span-3 sm:col-span-1">Monsur123</p>
+                    <p className=" text-[#929292] col-span-5 ">mhussain@pta.com</p>
+                    <div className="col-span-2 sm:col-span-1 flex flex-col sm:flex-row">
+                        <button onClick={() => setEditModal(true)} className="sm:border bg-white border-[#003DA6] text-[#003DA6] rounded-[4px] px-0 sm:px-4 py-3">Edit</button>
+                        <button onClick={() => setDeleteModal(true)} className="bg-white sm:bg-danger px-0 sm:px-4 py-3 sm:ml-4 rounded-lg text-danger sm:text-white ">Delete</button>
                     </div>
                 </div>
                 {deleteModal &&

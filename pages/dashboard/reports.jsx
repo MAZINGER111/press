@@ -12,39 +12,23 @@ const Reports = () => {
                     <h2 className="text-[24px] leading-[29px] text-[#3e3e3e] font-[400]">Manage Reports</h2>
 
                 </div>
-                <div className="grid grid-cols-6 border-b pb-4 pt-[18px] pl-6">
-                    <div className="flex">
-                        <p className="text-[#3e3e3e]">SN</p>
-                        <p className="text-[#3e3e3e] ml-[31px]">Date</p>
+                <div className="grid grid-cols-6 border-b pb-4 pt-[18px] sm:pl-6">
+                    <div className="sm:flex col-span-2 sm:col-span-1">
+                        <p className="text-[#3e3e3e] hidden sm:block">SN</p>
+                        <p className="text-[#3e3e3e] sm:ml-[31px]">Date</p>
+                        <p className="text-[#3e3e3e] mt-2 sm:hidden">Author</p>
                     </div>
-                    <p className="text-[#3e3e3e]">Author</p>
+                    <p className="text-[#3e3e3e] hidden sm:block">Author</p>
                     <p className="text-[#3e3e3e] col-span-3">Title</p>
                     <p className="text-[#3e3e3e]">Action</p>
                 </div>
-                <div className="grid grid-cols-6 border-b items-center py-[21px] pl-6">
-                    <div className="flex">
-                        <p className="text-[#929292]">1</p>
-                        <p className="ml-[31px] text-[#929292]">20/01/2023</p>
+                <div className="grid grid-cols-6 border-b items-center py-[21px] sm:pl-6">
+                    <div className="col-span-2 sm:flex sm:col-span-1">
+                        <p className="text-[#929292] hidden sm:block">1</p>
+                        <p className="sm:ml-[31px] text-[#929292]">20/01/2023</p>
+                        <p className="text-[#929292] mt-2 sm:hidden">Kelechi Odowu</p>
                     </div>
-                    <p className="text-[#929292]">Kelechi Odowu</p>
-                    <p className="col-span-3 text-[#929292]">Guns Fired At Journalists Trying To Cover The End SARS Campaign</p>
-                    <button onClick={() => setViewModal(true)} className="bg-[#3e3e3e] w-fit px-4 py-3 rounded-lg text-white ">View</button>
-                </div>
-                <div className="grid grid-cols-6 border-b items-center py-[21px] pl-6">
-                    <div className="flex">
-                        <p className="text-[#929292]">1</p>
-                        <p className="ml-[31px] text-[#929292]">20/01/2023</p>
-                    </div>
-                    <p className="text-[#929292]">Kelechi Odowu</p>
-                    <p className="col-span-3 text-[#929292]">Guns Fired At Journalists Trying To Cover The End SARS Campaign</p>
-                    <button onClick={() => setViewModal(true)} className="bg-[#3e3e3e] w-fit px-4 py-3 rounded-lg text-white ">View</button>
-                </div>
-                <div className="grid grid-cols-6 border-b items-center py-[21px] pl-6">
-                    <div className="flex">
-                        <p className="text-[#929292]">1</p>
-                        <p className="ml-[31px] text-[#929292]">20/01/2023</p>
-                    </div>
-                    <p className="text-[#929292]">Kelechi Odowu</p>
+                    <p className="text-[#929292] hidden sm:block">Kelechi Odowu</p>
                     <p className="col-span-3 text-[#929292]">Guns Fired At Journalists Trying To Cover The End SARS Campaign</p>
                     <button onClick={() => setViewModal(true)} className="bg-[#3e3e3e] w-fit px-4 py-3 rounded-lg text-white ">View</button>
                 </div>

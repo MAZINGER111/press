@@ -18,11 +18,11 @@ const Navbar = () => {
                     <p className="italic text-[#1F215F] leading-[19px] text-[15px] font-[400]">TRACKER</p>
                 </div>
             </div>
-            {!showNavs && <img src="/images/menu.png" onClick={() => setShowNavs(true)} className="h-10 w-10 absolute top-5 right-3 ml-auto sm:hidden " alt="" />
+            {!showNavs && <img src="/images/menu.png" onClick={() => setShowNavs(true)} className="h-10 w-10 absolute top-3 right-3 ml-auto sm:hidden " alt="" />
 }
-            <ul className={`absolute top-16 w-[50vw] right-[150vw] ${showNavs && 'slide-in'} sm:left-0 sm:h-auto sm:w-auto sm:relative sm:flex mx-auto`}>
+            <ul className={`absolute top-16 w-[50vw] right-[150vw] ${showNavs && 'slide-in'} sm:left-0 sm:h-auto sm:w-auto sm:static sm:flex mx-auto`}>
                 {showNavs &&
-                    <img src="/images/cancel.png" onClick={() => setShowNavs(false)} className="h-5 w-5 fixed top-7 right-6 ml-auto sm:hidden" alt="" />
+                    <img src="/images/cancel.png" onClick={() => setShowNavs(false)} className="h-5 w-5 absolute -top-10 right-0 ml-auto sm:hidden" alt="" />
                 }
                 <Link href="/">
                     <li className={`block ml-auto mr-0 mb-3 pb-2 w-fit sm:w-[100px] text-center sm:mr-[85px] sm:py-[29px] ${checkActive("/")}`}>Home</li>

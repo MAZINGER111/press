@@ -18,35 +18,37 @@ const Stories = () => {
                         </svg>
                         <input className="bg-white ml-[32px] " style={{ border: 'none' }} type="text" placeholder="Search Title, Author" />
                     </div>
-                    <button onClick={() => setAddModal(true)} className="bg-yellow p-4 text-[14px] leading-[17px] text-[#3e3e3e] font-[500] rounded-[6px] mr-4">Add Story</button>
+                    <button onClick={() => setAddModal(true)} className="bg-yellow p-4 text-[14px] leading-[17px] text-[#3e3e3e] font-[500] rounded-[6px] sm:mr-4">Add Story</button>
                 </div>
                 <div className="border-b border-[#d9d9d9] mt-[14px] mb-[19px]"></div>
                 <div className="grid grid-cols-6 border-b pb-4 pt-[18px]">
-                    <div className="flex">
-                        <p className="text-[#3e3e3e]">SN</p>
-                        <p className="text-[#3e3e3e] ml-[31px]">Date</p>
+                    <div className="sm:flex col-span-2">
+                        <p className="text-[#3e3e3e] hidden sm:block">SN</p>
+                        <p className="text-[#3e3e3e] sm:ml-[31px]">Date</p>
+                        <p className="text-[#3e3e3e] mt-2 sm:hidden">Author</p>
                     </div>
-                    <p className="text-[#3e3e3e]">Author</p>
+                    <p className="text-[#3e3e3e] hidden sm:block">Author</p>
                     <p className="text-[#3e3e3e] col-span-3">Title</p>
-                    <p className="text-[#3e3e3e]">Action</p>
+                    <p className="text-[#3e3e3e] text-center sm:text-left">Action</p>
                 </div>
                 <div className="grid grid-cols-6 border-b items-center py-[21px]">
-                    <div className="flex">
-                        <p className="text-[#929292]">1</p>
-                        <p className="ml-[31px] text-[#929292]">20/01/2023</p>
+                    <div className="col-span-2 sm:col-span-1 sm:flex">
+                        <p className="text-[#929292] hidden sm:block">1</p>
+                        <p className="sm:ml-[31px] text-[#929292]">20/01/2023</p>
+                        <p className="mt-2 text-[#929292] sm:hidden">Kelechi Odowu</p>
                     </div>
-                    <p className="text-[#929292]">Kelechi Odowu</p>
-                    <p className="col-span-3 text-[#929292]">Guns Fired At Journalists Trying To Cover The End SARS Campaign</p>
-                    <div className="flex ">
-                        <button onClick={() => setEditModal(true)} className="border bg-white border-[#003DA6] text-[#003DA6] rounded-[4px]  px-4 py-3">Edit</button>
-                        <button onClick={() => setDeleteModal(true)} className="bg-danger px-4 py-3 ml-4 rounded-lg text-white ">Delete</button>
+                    <p className="hidden sm:block sm:col-span-1 text-[#929292]">Kelechi Odowu</p>
+                    <p className="col-span-3 sm:col-span-3 text-[#929292]">Guns Fired At Journalists Trying To Cover The End SARS Campaign</p>
+                    <div className="sm:flex text-center sm:text-left">
+                        <button onClick={() => setEditModal(true)} className="sm:border bg-white border-[#003DA6] text-[#003DA6] rounded-[4px] px-0 sm:px-4 py-0 sm:py-3">Edit</button>
+                        <button onClick={() => setDeleteModal(true)} className="bg-white sm:bg-danger px-0 sm:px-4 py-0 mt-4 sm:mt-0 sm:py-3 sm:ml-4 rounded-lg text-danger sm:text-white ">Delete</button>
                     </div>
                 </div>
                 {deleteModal &&
                     <Modal hideModal={() => setDeleteModal(false)} title="Are you sure you want to delete this story" >
                         <div className="flex justify-center mt-9">
-                            <button className="bg-[#606060] rounded-lg px-6 py-4 text-white   mr-4">Cancel</button>
-                            <button className="bg-danger rounded-lg px-6 py-4 text-white  ">Delete</button>
+                            <button className="bg-[#606060] rounded-lg px-6 py-4 text-white mr-4 text-center ">Cancel</button>
+                            <button className="bg-danger rounded-lg px-6 py-4 text-white text-center">Delete</button>
                         </div>
                     </Modal>
                 }

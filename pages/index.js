@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout showReport={false}>
       <div className='mb-[60px]'>
         <div className='h-[400px] mx-5 sm:mx-10 mt-[73px] bg-[#F0F0F0] flex items-center justify-center'>
           <p className='opacity-50'>Heat Map</p>
