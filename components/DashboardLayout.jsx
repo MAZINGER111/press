@@ -6,7 +6,7 @@ const DashboardLayout = ({ children }) => {
     
     return (
         <div>
-            <div className="flex relative items-center justify-between bg-[#3E3E3E] py-3 px-6">
+            <div className="flex relative items-center z-10 justify-between bg-[#3E3E3E] py-3 px-6">
                 {showSidebar
                     ? <img src="/images/cancel.png" onClick={() => setShowSidebar(false)} className="absolute ml-2 h-5 invert-[1] w-5 left-3 sm:hidden" alt="" />
                     : <img src="/images/menu.png" onClick={() => setShowSidebar(true)} className="absolute h-10 w-10 invert-[1] left-3 sm:hidden" alt="" />
@@ -18,7 +18,7 @@ const DashboardLayout = ({ children }) => {
                 <p className="text-yellow text-[14px] leading-[17px]">Welcome, Monsur Hussain</p>
             </div>
             <div className="flex">
-                <Sidebar showSidebar={showSidebar}/>
+                <Sidebar showSidebar={showSidebar} hideSidebar={() => setShowSidebar(false)}/>
                 <div className="flex-1 pl-[22px] pr-[25px] pt-6">
                     {children}
                 </div>
