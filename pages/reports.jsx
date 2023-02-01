@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Layout from '../components/Layout'
 import { BackArrow, DownArrow, ForwardArrow } from '../components/Svgs'
 import style from '../styles/report.module.css'
+import BlogCard from '../components/BlogCard'
 const Reports = () => {
     const [showForm, setShowForm] = useState(false)
     return (
@@ -20,10 +21,10 @@ const Reports = () => {
                         </div>
                     </div>
                     <div className="grid sm:grid-cols-4 gap-x-6 gap-y-14">
-                        <ReportCard />
-                        <ReportCard />
-                        <ReportCard />
-                        <ReportCard />
+                        <BlogCard />
+                        <BlogCard />
+                        <BlogCard />
+                        <BlogCard />
                     </div>
                     <div className='mt-[104px] mb-[51px] flex flex-col gap-y-6 sm:flex-row justify-between'>
                         <p>Page 1 of 10 - 30</p>
@@ -54,23 +55,6 @@ const Reports = () => {
 }
 
 export default Reports
-
-const ReportCard = () => {
-    return (
-        <div>
-            <div className="flex justify-between mb-2 items-center">
-                <p className='text-[18px] opacity-50 leading-[21px]'>Author Kinsley A.</p>
-                <div className='flex items-center'>
-                    <img src="/images/clock.png" className='w-[18px] h-5' alt="" />
-                    <p className='ml-[9px]'>2 mins ago</p>
-                </div>
-            </div>
-            <img src="/images/report4.png" className='block w-full h-[221px]' alt="" />
-            <p className='text-[18px] leading-[21px] font-[600] mt-[21px] mb-2'>Guns fired at journalists trying to cover the END SARS Campaign</p>
-            <p className='opacity-70 font-[400] leading-[22px]'>Lorem ipsum dolor sit amet onsectetur. Id faucibus maecenas massa imperdiet tellus aliquet nulla viverra. Euismod faucibus volutpat.</p>
-        </div>
-    )
-}
 
 const ReportForm = () => {
     return (
