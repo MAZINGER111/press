@@ -10,10 +10,8 @@ const Reports = () => {
             {!showForm &&
                 <div className='mx-5 sm:mx-10 mb-10'>
                     <div className='flex flex-col sm:flex-row justify-between mb-10 mt-[89px]'>
-                        <input type="text" placeholder='Search Stories' className='placeholder:opacity-50' />
+                        <input type="text" placeholder='Search Stories' className='placeholder:opacity-50 sm:w-[30vw]' />
                         <div className='flex items-center mt-2 sm:mt-0'>
-                            <p>January</p>
-                            <DownArrow className="ml-3 mr-12 sm:ml-[45px] sm:mr-[57px]" />
                             <p>2022</p>
                             <DownArrow className="ml-3 mr-12 sm:ml-[45px] sm:mr-[57px]" />
                             <p>Nigeria</p>

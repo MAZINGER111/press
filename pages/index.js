@@ -46,8 +46,8 @@ const Faq = () => {
       <div className='flex justify-between items-center'>
         <p>Who is involved in the site?</p>
         {show
-          ? <MinusIcon onClick={() => setShow(!show)} className="cursor-pointer" />
-          : <PlusIcon onClick={() => setShow(!show)} className="cursor-pointer" />
+          ? <MinusIcon onClick={() => setShow(!show)} className="cursor-pointer w-4 h-4" />
+          : <PlusIcon onClick={() => setShow(!show)} className="cursor-pointer h-4" />
         }
       </div>
       {show &&

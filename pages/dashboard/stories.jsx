@@ -2,6 +2,7 @@ import { useState } from "react"
 import Modal from "../../components/Modal"
 import DashboardLayout from "../../components/DashboardLayout"
 import style from "../../styles/admin.module.css"
+import { ForwardArrow, BackArrow } from "../../components/Svgs"
 
 const Stories = () => {
     const [editModal, setEditModal] = useState(false)
@@ -11,16 +12,12 @@ const Stories = () => {
         <DashboardLayout>
             <h2 className="text-[24px] leading-[29px] text-[#3e3e3e] font-[400]">Stories</h2>
             <div className={style.container}>
-                <div className="relative flex justify-between mt-8">
-                    <svg className="absolute top-5 left-[18px]" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.8982 13.75L8.17324 9.025C7.79824 9.325 7.36699 9.5625 6.87949 9.7375C6.39199 9.9125 5.87324 10 5.32324 10C3.96074 10 2.80774 9.52825 1.86424 8.58475C0.920242 7.64075 0.448242 6.4875 0.448242 5.125C0.448242 3.7625 0.920242 2.60925 1.86424 1.66525C2.80774 0.72175 3.96074 0.25 5.32324 0.25C6.68574 0.25 7.83899 0.72175 8.78299 1.66525C9.72649 2.60925 10.1982 3.7625 10.1982 5.125C10.1982 5.675 10.1107 6.19375 9.93574 6.68125C9.76074 7.16875 9.52324 7.6 9.22324 7.975L13.9482 12.7L12.8982 13.75ZM5.32324 8.5C6.26074 8.5 7.05774 8.172 7.71424 7.516C8.37024 6.8595 8.69824 6.0625 8.69824 5.125C8.69824 4.1875 8.37024 3.3905 7.71424 2.734C7.05774 2.078 6.26074 1.75 5.32324 1.75C4.38574 1.75 3.58874 2.078 2.93224 2.734C2.27624 3.3905 1.94824 4.1875 1.94824 5.125C1.94824 6.0625 2.27624 6.8595 2.93224 7.516C3.58874 8.172 4.38574 8.5 5.32324 8.5Z" fill="#B7B7B7" />
-                    </svg>
-                    <input className="bg-white ml-[32px] mr-4" style={{ border: 'none' }} type="text" placeholder="Search Title, Author" />
+                <div className="mt-8 text-right">
                     <button onClick={() => setAddModal(true)} className="bg-yellow shrink-0 p-4 text-[14px] leading-[17px] text-[#3e3e3e] font-[500] rounded-[6px] sm:mr-4">Add Story</button>
                 </div>
                 <div className="border-b border-[#d9d9d9] mt-[14px] mb-[19px]"></div>
                 <div className="grid grid-cols-6 border-b pb-4 pt-[18px]">
-                    <div className="sm:flex col-span-2">
+                    <div className="sm:flex col-span-2 sm:col-span-1">
                         <p className="text-[#3e3e3e] hidden sm:block">SN</p>
                         <p className="text-[#3e3e3e] sm:ml-[31px]">Date</p>
                         <p className="text-[#3e3e3e] mt-2 sm:hidden">Author</p>
@@ -32,7 +29,7 @@ const Stories = () => {
                 <div className="grid grid-cols-6 border-b items-center py-[21px]">
                     <div className="col-span-2 sm:col-span-1 sm:flex">
                         <p className="text-[#929292] hidden sm:block">1</p>
-                        <p className="sm:ml-[31px] text-[#929292]">20/01/2023</p>
+                        <p className="sm:ml-[41px] text-[#929292]">20/01/2023</p>
                         <p className="mt-2 text-[#929292] sm:hidden">Kelechi Odowu</p>
                     </div>
                     <p className="hidden sm:block sm:col-span-1 text-[#929292]">Kelechi Odowu</p>
@@ -86,6 +83,20 @@ const Stories = () => {
                         </div>
                     </Modal>
                 }
+            </div>
+            <div className='mt-[204px] mb-[51px] flex flex-col gap-y-6 sm:flex-row justify-between'>
+                <p>Page 1 of 10 - 30</p>
+                <div className='flex items-center'>
+                    <BackArrow className="mr-[13px]" />
+                    <p className='mr-[33px] font-[400]'>Previous</p>
+                    <div className='grid grid-cols-3 gap-x-[14px]'>
+                        <p className='py-[6px] px-[14px] bg-black text-white'>1</p>
+                        <p className='py-[6px] px-[14px]'>2</p>
+                        <p className='py-[6px] px-[14px]'>3</p>
+                    </div>
+                    <p className='ml-[33px]'>Next</p>
+                    <ForwardArrow className="ml-[13px]" />
+                </div>
             </div>
         </DashboardLayout>
     )

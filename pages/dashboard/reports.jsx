@@ -2,6 +2,7 @@ import { useState } from "react"
 import Modal from "../../components/Modal"
 import DashboardLayout from "../../components/DashboardLayout"
 import style from "../../styles/admin.module.css"
+import { ForwardArrow, BackArrow } from "../../components/Svgs"
 
 const Reports = () => {
     const [viewModal, setViewModal] = useState(false)
@@ -31,6 +32,20 @@ const Reports = () => {
                     <p className="text-[#929292] hidden sm:block">Kelechi Odowu</p>
                     <p className="col-span-3 text-[#929292]">Guns Fired At Journalists Trying To Cover The End SARS Campaign</p>
                     <button onClick={() => setViewModal(true)} className="bg-[#3e3e3e] w-fit px-4 py-3 rounded-lg text-white ">View</button>
+                </div>
+                <div className='mt-[304px] mb-[51px] flex flex-col gap-y-6 sm:flex-row justify-between'>
+                    <p>Page 1 of 10 - 30</p>
+                    <div className='flex items-center'>
+                        <BackArrow className="mr-[13px]" />
+                        <p className='mr-[33px] font-[400]'>Previous</p>
+                        <div className='grid grid-cols-3 gap-x-[14px]'>
+                            <p className='py-[6px] px-[14px] bg-black text-white'>1</p>
+                            <p className='py-[6px] px-[14px]'>2</p>
+                            <p className='py-[6px] px-[14px]'>3</p>
+                        </div>
+                        <p className='ml-[33px]'>Next</p>
+                        <ForwardArrow className="ml-[13px]" />
+                    </div>
                 </div>
                 {viewModal &&
                     <Modal hideModal={() => setViewModal(false)} title="View Report" large={true}>
