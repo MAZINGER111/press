@@ -3,6 +3,10 @@ import { ShareIcon } from "../../components/Svgs"
 import Layout from "../../components/Layout"
 
 const SingleReport = () => {
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
     return (
         <Layout>
             <div className=" mx-5 sm:mx-10">
@@ -24,7 +28,7 @@ const SingleReport = () => {
                     Quis aliquam donec egestas nulla odio ac. Mollis facilisis praesent netus tristique. Nascetur ac lorem eget non in suspendisse. Odio duis pretium at risus in neque arcu sapien at. Pellentesque fermentum suspendisse sit diam euismod. Diam sapien urna a tellus enim. Lacinia dis arcu ultrices aenean hendrerit amet. Tristique convallis vitae commodo tellus
 
                 </p>
-                <button className="block ml-auto border border-[#929292] px-[18px] py-3 mb-[60px]">Back to top</button>
+                <button onClick={topFunction} className="block ml-auto border border-[#929292] px-[18px] py-3 mb-[60px]">Back to top</button>
                 <div className="grid sm:grid-cols-2 gap-x-6 mt-[130px] mb-10">
                     <div>
                         <p className='text-[24px] font-[400]'>Leave A Comment</p>
@@ -60,6 +64,6 @@ const Comment = () => (
             <p className='text-[16px] leading-[19px] text-[#263238] font-[400]'>1 hour ago</p>
         </div>
         <p className='text-[#4c4c4c] font-[400] mt-[7px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque similique at. Cumque, molestias? Explicabo aperiam beatae saepe at, fugit cumque hic magni laboriosam officia adipisci tempora reiciendis sunt quasi?</p>
-        <p className='mt-4'>Reply</p>
+        <p className='mt-4 cursor-pointer'>Reply</p>
     </div>
 )

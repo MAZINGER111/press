@@ -1,9 +1,10 @@
+import Link from "next/link"
 import { useState } from "react"
 import Sidebar from "./Sidebar"
 
 const DashboardLayout = ({ children }) => {
     const [showSidebar, setShowSidebar] = useState(false)
-    
+
     return (
         <div>
             <div className="flex relative items-center z-10 justify-between bg-[#3E3E3E] py-3 px-6">
@@ -11,14 +12,16 @@ const DashboardLayout = ({ children }) => {
                     ? <img src="/images/cancel.png" onClick={() => setShowSidebar(false)} className="absolute ml-2 h-5 invert-[1] w-5 left-3 sm:hidden" alt="" />
                     : <img src="/images/menu.png" onClick={() => setShowSidebar(true)} className="absolute h-10 w-10 invert-[1] left-3 sm:hidden" alt="" />
                 }
-                <div className="ml-10 sm:ml-0">
-                    <p className="text-yellow text-[24px] font-[600] leading-[29px]">PAT</p>
-                    <p className="text-white">Admin</p>
-                </div>
+                <Link href="/dashboard">
+                    <div className="ml-10 sm:ml-0">
+                        <p className="text-yellow text-[24px] font-[600] leading-[29px]">PAT</p>
+                        <p className="text-white">Admin</p>
+                    </div>
+                </Link>
                 <p className="text-yellow text-[14px] leading-[17px]">Welcome, Monsur Hussain</p>
             </div>
             <div className="flex">
-                <Sidebar showSidebar={showSidebar} hideSidebar={() => setShowSidebar(false)}/>
+                <Sidebar showSidebar={showSidebar} hideSidebar={() => setShowSidebar(false)} />
                 <div className="flex-1 pl-[22px] pr-[25px] pt-6">
                     {children}
                 </div>

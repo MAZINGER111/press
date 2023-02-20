@@ -3,6 +3,7 @@ import Modal from "../../components/Modal"
 import DashboardLayout from "../../components/DashboardLayout"
 import style from "../../styles/admin.module.css"
 import { BackArrow, ForwardArrow } from "../../components/Svgs"
+import { PageNavigator } from "../../components/PageNavigator"
 
 const Blog = () => {
     const [editModal, setEditModal] = useState(false)
@@ -39,20 +40,7 @@ const Blog = () => {
                         <button onClick={() => setDeleteModal(true)} className="bg-white sm:bg-danger px-0 sm:px-4 py-0 mt-4 sm:mt-0 sm:py-3 sm:ml-4 rounded-lg text-danger sm:text-white ">Delete</button>
                     </div>
                 </div>
-                <div className='mt-[204px] mb-[51px] flex flex-col gap-y-6 sm:flex-row justify-between'>
-                    <p>Page 1 of 10 - 30</p>
-                    <div className='flex items-center'>
-                        <BackArrow className="mr-[13px]" />
-                        <p className='mr-[33px] font-[400]'>Previous</p>
-                        <div className='grid grid-cols-3 gap-x-[14px]'>
-                            <p className='py-[6px] px-[14px] bg-black text-white'>1</p>
-                            <p className='py-[6px] px-[14px]'>2</p>
-                            <p className='py-[6px] px-[14px]'>3</p>
-                        </div>
-                        <p className='ml-[33px]'>Next</p>
-                        <ForwardArrow className="ml-[13px]" />
-                    </div>
-                </div>
+                <PageNavigator />
                 {deleteModal &&
                     <Modal hideModal={() => setDeleteModal(false)} title="Are you sure you want to delete this blog" >
                         <div className="flex justify-center mt-9">

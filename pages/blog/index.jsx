@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout'
 import { BackArrow, DownArrow, ForwardArrow } from '../../components/Svgs'
 import BlogCard from '../../components/BlogCard'
+import { PageNavigator } from '../../components/PageNavigator'
 const Reports = () => {
     return (
         <Layout>
@@ -20,20 +21,7 @@ const Reports = () => {
                     <BlogCard />
                     <BlogCard />
                 </div>
-                <div className='mt-[104px] mb-[51px] flex flex-col gap-y-6 sm:flex-row justify-between'>
-                    <p>Page 1 of 10 - 30</p>
-                    <div className='flex items-center'>
-                        <BackArrow className="mr-[13px]" />
-                        <p className='mr-[33px] font-[400]'>Previous</p>
-                        <div className='grid grid-cols-3 gap-x-[14px]'>
-                            <p className='py-[6px] px-[14px] bg-black text-white'>1</p>
-                            <p className='py-[6px] px-[14px]'>2</p>
-                            <p className='py-[6px] px-[14px]'>3</p>
-                        </div>
-                        <p className='ml-[33px]'>Next</p>
-                        <ForwardArrow className="ml-[13px]" />
-                    </div>
-                </div>
+                <PageNavigator />
             </div>
         </Layout>
     )
