@@ -4,10 +4,12 @@ import DashboardLayout from "../../components/DashboardLayout"
 import style from "../../styles/admin.module.css"
 import { ForwardArrow, BackArrow } from "../../components/Svgs"
 import { PageNavigator } from "../../components/PageNavigator"
+import { AttackOptions } from "../../utils/Attacks"
 
 const Stories = () => {
     const [editModal, setEditModal] = useState(false)
     const [addModal, setAddModal] = useState(false)
+    const [fileName, setFileName] = useState("No file Chosen")
     const [deleteModal, setDeleteModal] = useState(false)
     return (
         <DashboardLayout>
@@ -54,14 +56,23 @@ const Stories = () => {
                         <input type="text" className="mt-2 mb-4 bg-white p-4 rounded-lg  " />
                         <p className="mb-2 text-[#3e3e3e]">Type of Attack</p>
                         <select name="" id="" className="p-4 w-full rounded-lg mb-4">
-                            <option value="">Physical Attack</option>
+                            {AttackOptions.map(attack => (
+                                <option value={attack.value}>{attack.name}</option>
+                            ))}
                         </select>
                         <p className="mb-2 text-[#3e3e3e]">Title</p>
                         <input type="text" className="mb-4 bg-white p-4 rounded-lg  " />
                         <p className="mb-2 text-[#3e3e3e]">Body</p>
                         <textarea name="" id="" className="bg-white h-[200px]"></textarea>
+                        <div className="flex items-center mt-4 mb-5">
+                            <label className='border border-gray-700 py-3 px-6 cursor-pointer text-gray-700 font-semibold text-[14px]' htmlFor='file-upload'>
+                                Choose File
+                            </label>
+                            <input type="file" name="" className='hidden' onChange={e => setFileName(e.target.files[0].name)} id="file-upload" />
+                            <p className="ml-6 text-[14px]">{fileName}</p>
+                        </div>
                         <div className="flex justify-center mt-10">
-                            <button className="text-white rounded-lg mr-4 bg-[#606060]" onClick={() => setEditModal(false)}>Cancel</button>
+                            <button className="text-white rounded-lg mr-4 bg-[#606060]" onClick={() => setAddModal(false)}>Cancel</button>
                             <button className="bg-yellow rounded-lg text-[#3e3e3e]">Submit Stories</button>
                         </div>
                     </Modal>
@@ -72,12 +83,21 @@ const Stories = () => {
                         <input type="text" className="mt-2 mb-4 bg-white p-4 rounded-lg  " />
                         <p className="mb-2 text-[#3e3e3e]">Type of Attack</p>
                         <select name="" id="" className="p-4 w-full rounded-lg mb-4">
-                            <option value="">Physical Attack</option>
+                            {AttackOptions.map(attack => (
+                                <option value={attack.value}>{attack.name}</option>
+                            ))}
                         </select>
                         <p className="mb-2 text-[#3e3e3e]">Title</p>
                         <input type="text" className="mb-4 bg-white p-4 rounded-lg  " />
                         <p className="mb-2 text-[#3e3e3e]">Body</p>
                         <textarea name="" id="" className="bg-white h-[200px]"></textarea>
+                        <div className="flex items-center mt-4 mb-5">
+                            <label className='border border-gray-300 py-3 px-6 cursor-pointer text-gray-700 font-semibold text-[14px]' htmlFor='file-upload'>
+                                Choose File
+                            </label>
+                            <input type="file" name="" className='hidden' onChange={e => setFileName(e.target.files[0].name)} id="file-upload" />
+                            <p className="ml-6 text-[14px]">{fileName}</p>
+                        </div>
                         <div className="flex justify-center mt-10">
                             <button className="text-white rounded-lg mr-4 bg-[#606060]" onClick={() => setEditModal(false)}>Cancel</button>
                             <button className="bg-yellow rounded-lg text-[#3e3e3e]">Submit Stories</button>

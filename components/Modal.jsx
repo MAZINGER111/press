@@ -1,7 +1,7 @@
 const Modal = ({ children, hideModal, title, large=false }) => {
     return (
         <>
-            <div onClick={hideModal} className="fixed top-0 left-0 bg-black opacity-50 w-screen h-screen">
+            <div onClick={hideModal} className="fixed z-10 top-0 left-0 bg-black opacity-50 w-screen h-screen">
 
             </div>
             <div className={`fixed p-4 bg-white ${large ? 'w-[790px]' : 'w-[428px]'} max-w-[85vw] max-h-[85vh] overflow-y-scroll left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] z-10 rounded-xl`}>

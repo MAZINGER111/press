@@ -19,20 +19,20 @@ const ReportAttack = () => {
                     </div>
                     <input type="text" placeholder="Title" />
                     <div className="grid sm:grid-cols-2 gap-x-[15px]">
-                        <input type="text" name="" placeholder="Contact Information" id="" />
-                        <select name="" id="" placeholder="Type of Attack">
-                            <option value="" disabled>Gender</option>
-                            <option value="">Male</option>
-                            <option value="">Female</option>
-                        </select>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-x-[15px]">
                         <input type="text" name="" placeholder="Victim Affiliation" id="" />
                         <select name="" id="" placeholder="Type of Attack">
                             <option value="" disabled>Type Of Attack</option>
                             {AttackOptions.map(type => (
                                 <option value={type.value}>{type.name}</option>
                             ))}
+                        </select>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-x-[15px]">
+                        <input type="text" name="" placeholder="Contact Information" id="" />
+                        <select name="" id="" placeholder="Type of Attack">
+                            <option value="" disabled>Gender</option>
+                            <option value="">Male</option>
+                            <option value="">Female</option>
                         </select>
                     </div>
                     <input type="text" name="" placeholder="Location" id="" />
