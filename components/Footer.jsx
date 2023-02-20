@@ -10,18 +10,26 @@ const Footer = () => {
                 </Link>
             </div>
             <ul className="mt-4 sm:mt-0 sm:w-1/3 flex flex-row sm:flex-col justify-between">
-                <Link href="/">
-                    <li className="text-[18px]  leading-[22px]">Home</li>
-                </Link>
-                <Link href="/reports">
-                    <li className="text-[18px]  leading-[22px]">Stories</li>
-                </Link>
-                <Link href="/reports">
-                    <li className="text-[18px]  leading-[22px]">Report Attack</li>
-                </Link>
-                <Link href="/blog">
-                    <li className="text-[18px]  leading-[22px]">Blog</li>
-                </Link>
+                <li className="text-[18px] leading-[22px]">
+                    <Link href="/">
+                        Home
+                    </Link>
+                </li>
+                <li className="text-[18px] leading-[22px]">
+                    <Link href="/reports">
+                        Stories
+                    </Link>
+                </li>
+                <li className="text-[18px] leading-[22px]">
+                    <Link href="/report-attack">
+                        Report Attack
+                    </Link>
+                </li>
+                <li className="text-[18px] leading-[22px]">
+                    <Link href="/blog">
+                        Blog
+                    </Link>
+                </li>
             </ul>
             <ul className="mt-4 sm:mt-0 sm:w-1/3 flex flex-row sm:flex-col justify-between">
                 <li className="text-[18px]  leading-[22px] mb-4">Get in touch</li>
