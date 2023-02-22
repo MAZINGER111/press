@@ -18,7 +18,7 @@ const ReportAttack = () => {
                         <input type="text" placeholder="Author (Optional)" />
                     </div>
                     <input type="text" placeholder="Title" />
-                    <div className="grid sm:grid-cols-2 gap-x-[15px]">
+                    <div className="grid overflow-hidden sm:grid-cols-2 gap-x-[15px]">
                         <input type="text" name="" placeholder="Victim Affiliation" id="" />
                         <select name="" id="" placeholder="Type of Attack">
                             <option value="" disabled>Type Of Attack</option>
