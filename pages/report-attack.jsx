@@ -4,6 +4,7 @@ import style from '../styles/report.module.css'
 import { AttackOptions } from "../utils/Attacks"
 const ReportAttack = () => {
     const [fileName, setFileName] = useState("No file Chosen")
+    const [date, setDate] = useState((new Date()).toDateString())
     return (
         <Layout showReport={false}>
             <div className='grid sm:grid-cols-2 sm:gap-x-6 sm:mt-12 mt-7 mb-[88px]'>
@@ -14,7 +15,7 @@ const ReportAttack = () => {
                     <p>Report Attack</p>
                     <p className='text-[#1c1b1f]/50 text-[14px] leading-[19px] mt-2 mb-4'>Fill in The Details of The Attack You Would Like To Report And the Information Would Be Verified</p>
                     <div className="grid sm:grid-cols-2 gap-x-[15px]">
-                        <input type="date" placeholder='Date' />
+                        <input type="date" value={date} onChange={e => setDate(e.target.value)} />
                         <input type="text" placeholder="Author (Optional)" />
                     </div>
                     <input type="text" placeholder="Title" />
