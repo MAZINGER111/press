@@ -32,9 +32,9 @@ const Footer = () => {
                 </li>
             </ul>
             <ul className="mt-4 sm:mt-0 sm:w-1/3 flex flex-row sm:flex-col justify-between">
-                <li className="text-[18px]  leading-[22px] mb-4">Get in touch</li>
-                <li className="text-[18px]  leading-[22px] mb-4">info@ptcij.org</li>
-                <li className="text-[18px]  leading-[22px]">08104198112</li>
+                <li className="text-[18px]  leading-[22px] mb-4 cursor-pointer">Get in touch</li>
+                <li className="text-[18px]  leading-[22px] mb-4 cursor-pointer">info@ptcij.org</li>
+                <li className="text-[18px]  leading-[22px] cursor-pointer">08104198112</li>
             </ul>
         </div>
     )
