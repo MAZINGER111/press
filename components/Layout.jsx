@@ -16,7 +16,10 @@ const Layout = ({ children, showReport = true }) => {
                     </Link>
                 </div>
             }
-            {children}
+            <div>
+
+                {children}
+            </div>
             <Footer />
         </>
     )

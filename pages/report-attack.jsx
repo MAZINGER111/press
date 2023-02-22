@@ -6,7 +6,7 @@ const ReportAttack = () => {
     const [fileName, setFileName] = useState("No file Chosen")
     return (
         <Layout showReport={false}>
-            <div className='grid sm:grid-cols-2 sm:gap-x-6 mt-7 mb-[88px]'>
+            <div className='grid sm:grid-cols-2 sm:gap-x-6 sm:mt-12 mt-7 mb-[88px]'>
                 <div className='bg-[#f5f5f5] h-full hidden sm:block'>
 
                 </div>
