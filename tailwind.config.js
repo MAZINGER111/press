@@ -16,7 +16,7 @@ module.exports = {
         danger: '#B70007'
       },
       backgroundImage: {
-        footer: 'url("/images/footer.png")'
+        footer: 'url("/images/press.jpg")'
       }
     },
   },

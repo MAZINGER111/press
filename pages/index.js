@@ -31,8 +31,8 @@ export default function Home() {
 
           <p className='font-[600] text-[24px] mb-[30] mt-[81px]'>Frequently Asked Questions</p>
           <div className='sm:px-[31px]'>
-            {FaqData.map(faq => (
-              <Faq question={faq.question} answer={faq.answer} />
+            {FaqData.map((faq, index) => (
+              <Faq question={faq.question} key={index} answer={faq.answer} />
             ))}
           </div>
         </div>
