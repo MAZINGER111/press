@@ -1,60 +1,109 @@
-import { useState } from "react"
-import Layout from "../components/Layout"
-import style from '../styles/report.module.css'
-import { AttackOptions } from "../utils/Attacks"
+import { useState } from "react";
+import Layout from "../components/Layout";
+import style from "../styles/report.module.css";
+import { AttackOptions } from "../utils/Attacks";
+import Image from "next/image";
 const ReportAttack = () => {
-    const [fileName, setFileName] = useState("No file Chosen")
-    const year = (new Date()).getFullYear()
-    const month = `${new Date().getMonth()}`.padStart(2, '0')
-    const dateToday = `${new Date().getDate()}`.padStart(2, '0')
-    console.log('we have', year, month, dateToday)
-    const [date, setDate] = useState(`${year}-${month}-${dateToday}`)
-    return (
-        <Layout showReport={false}>
-            <div className='grid sm:grid-cols-2 sm:gap-x-6 sm:mt-12 mt-7 mb-[88px]'>
-                <div className='bg-[#f5f5f5] h-full hidden sm:block'>
+  const [fileName, setFileName] = useState("No file Chosen");
+  const year = new Date().getFullYear();
+  const month = `${new Date().getMonth()}`.padStart(2, "0");
+  const dateToday = `${new Date().getDate()}`.padStart(2, "0");
+  //   console.log("we have", year, month, dateToday);
+  const [date, setDate] = useState(`${year}-${month}-${dateToday}`);
+  return (
+    <Layout showReport={false}>
+      <div className="grid sm:grid-cols-2 sm:gap-x-6 sm:mt-12 mt-7 mb-[88px]">
+        <div
+          className="bg-[#f5f5f5] h-full hidden sm:block"
+          style={{
+            backgroundImage: "url('/images/submit-report.jpeg')",
+            backgroundPosition: "center center",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* <img
+            src="/images/submit-report.jpeg"
+            width={"100%"}
+            height={"100%"}
+            alt="submit report"
+          /> */}
+        </div>
+        <div className={style.container}>
+          <p>Report Attack</p>
+          <p className="text-[#1c1b1f]/50 text-[14px] leading-[19px] mt-2 mb-4">
+            Fill in The Details of The Attack You Would Like To Report And the
+            Information Would Be Verified
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-[15px]">
+            <input
+              type="date"
+              value={date}
+              defaultValue={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            <input type="text" placeholder="Author (Optional)" />
+          </div>
+          <input type="text" placeholder="Title" />
+          <div className="grid overflow-hidden sm:grid-cols-2 gap-x-[15px]">
+            <input type="text" name="" placeholder="Victim Affiliation" id="" />
+            <select name="" id="" placeholder="Type of Attack">
+              <option value="" disabled>
+                Type Of Attack
+              </option>
+              {AttackOptions.map((type) => (
+                <option value={type.value}>{type.name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-x-[15px]">
+            <input
+              type="text"
+              name=""
+              placeholder="Contact Information"
+              id=""
+            />
+            <select name="" id="" placeholder="Type of Attack">
+              <option value="" disabled>
+                Gender
+              </option>
+              <option value="">Male</option>
+              <option value="">Female</option>
+            </select>
+          </div>
+          <input type="text" name="" placeholder="Location" id="" />
+          <textarea
+            className="h-[200px]"
+            name=""
+            placeholder="Description"
+            id=""
+          ></textarea>
+          <div className="flex items-center mb-4">
+            <label
+              className="bg-[#1c1b1f] py-3 px-6 cursor-pointer text-white text-[14px]"
+              htmlFor="file-upload"
+            >
+              Choose File
+            </label>
+            <input
+              type="file"
+              name=""
+              className="hidden"
+              onChange={(e) => setFileName(e.target.files[0].name)}
+              id="file-upload"
+            />
+            <p className="ml-6 text-[14px]">{fileName}</p>
+          </div>
+          <p className="mt-[11px] mb-11 text-[#9c3b3b] font-[400] text-[14px] leading-[22px]">
+            Upload a picture or video evidence that includes time stamps
+          </p>
+          <button className="px-4 py-3 bg-yellow text-[#3e3e3e] text-[14px] leading-[22px] block ml-auto">
+            Report Attack
+          </button>
+        </div>
+      </div>
+    </Layout>
+  );
+};
 
-                </div>
-                <div className={style.container}>
-                    <p>Report Attack</p>
-                    <p className='text-[#1c1b1f]/50 text-[14px] leading-[19px] mt-2 mb-4'>Fill in The Details of The Attack You Would Like To Report And the Information Would Be Verified</p>
-                    <div className="grid sm:grid-cols-2 gap-x-[15px]">
-                        <input type="date" value={date} defaultValue={date} onChange={e => setDate(e.target.value)} />
-                        <input type="text" placeholder="Author (Optional)" />
-                    </div>
-                    <input type="text" placeholder="Title" />
-                    <div className="grid overflow-hidden sm:grid-cols-2 gap-x-[15px]">
-                        <input type="text" name="" placeholder="Victim Affiliation" id="" />
-                        <select name="" id="" placeholder="Type of Attack">
-                            <option value="" disabled>Type Of Attack</option>
-                            {AttackOptions.map(type => (
-                                <option value={type.value}>{type.name}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-x-[15px]">
-                        <input type="text" name="" placeholder="Contact Information" id="" />
-                        <select name="" id="" placeholder="Type of Attack">
-                            <option value="" disabled>Gender</option>
-                            <option value="">Male</option>
-                            <option value="">Female</option>
-                        </select>
-                    </div>
-                    <input type="text" name="" placeholder="Location" id="" />
-                    <textarea className='h-[200px]' name="" placeholder="Description" id="" ></textarea>
-                    <div className="flex items-center mb-4">
-                        <label className='bg-[#1c1b1f] py-3 px-6 cursor-pointer text-white text-[14px]' htmlFor='file-upload'>
-                            Choose File
-                        </label>
-                        <input type="file" name="" className='hidden' onChange={e => setFileName(e.target.files[0].name)} id="file-upload" />
-                        <p className="ml-6 text-[14px]">{fileName}</p>
-                    </div>
-                    <p className='mt-[11px] mb-11 text-[#9c3b3b] font-[400] text-[14px] leading-[22px]'>Upload a picture or video evidence that includes time stamps</p>
-                    <button className="px-4 py-3 bg-yellow text-[#3e3e3e] text-[14px] leading-[22px] block ml-auto">Report Attack</button>
-                </div>
-            </div>
-        </Layout>
-    )
-}
-
-export default ReportAttack
+export default ReportAttack;
