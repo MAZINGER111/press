@@ -8,13 +8,14 @@ import { PageNavigator } from "../../components/PageNavigator"
 const Blog = () => {
     const [editModal, setEditModal] = useState(false)
     const [addModal, setAddModal] = useState(false)
+    const [fileName, setFileName] = useState('No file chosen')
     const [deleteModal, setDeleteModal] = useState(false)
     return (
         <DashboardLayout>
             <h2 className="text-[24px] leading-[29px] text-[#3e3e3e] font-[400]">Blog</h2>
             <div className={style.container}>
                 <div className="mt-8 text-right">
-                    <button onClick={() => setAddModal(true)} className="bg-yellow shrink-0 p-4 text-[14px] leading-[17px] text-[#3e3e3e] font-[500] rounded-[6px] sm:mr-4">Add Story</button>
+                    <button onClick={() => setAddModal(true)} className="bg-yellow shrink-0 p-4 text-[14px] leading-[17px] text-[#3e3e3e] font-[500] rounded-[6px] sm:mr-4">Add Blog</button>
                 </div>
                 <div className="border-b border-[#d9d9d9] mt-[14px] mb-[19px]"></div>
                 <div className="grid grid-cols-6 border-b pb-4 pt-[18px]">
@@ -44,7 +45,7 @@ const Blog = () => {
                 {deleteModal &&
                     <Modal hideModal={() => setDeleteModal(false)} title="Are you sure you want to delete this blog" >
                         <div className="flex justify-center mt-9">
-                            <button className="bg-[#606060] rounded-lg px-6 py-4 text-white   mr-4">Cancel</button>
+                            <button className="bg-[#606060] rounded-lg px-6 py-4 text-white   mr-4" onClick={() => setDeleteModal(false)}>Cancel</button>
                             <button className="bg-danger rounded-lg px-6 py-4 text-white  ">Delete</button>
                         </div>
                     </Modal>
@@ -55,8 +56,15 @@ const Blog = () => {
                         <input type="text" className="mb-4 bg-white p-4 rounded-lg  " />
                         <p className="mb-2 text-[#3e3e3e]">Body</p>
                         <textarea name="" id="" className="bg-white h-[200px]"></textarea>
+                        <div className="flex items-center mt-4 mb-5">
+                            <label className='border border-gray-700 py-3 px-6 cursor-pointer text-gray-700 font-semibold text-[14px]' htmlFor='file-upload'>
+                                Choose File
+                            </label>
+                            <input type="file" name="" className='hidden' onChange={e => setFileName(e.target.files[0].name)} id="file-upload" />
+                            <p className="ml-6 text-[14px]">{fileName}</p>
+                        </div>
                         <div className="flex justify-center mt-10">
-                            <button className="text-white rounded-lg mr-4 bg-[#606060]" onClick={() => setEditModal(false)}>Cancel</button>
+                            <button className="text-white rounded-lg mr-4 bg-[#606060]" onClick={() => setAddModal(false)}>Cancel</button>
                             <button className="bg-yellow rounded-lg text-[#3e3e3e]">Submit Blog</button>
                         </div>
                     </Modal>
