@@ -34,7 +34,7 @@ const ReportAttack = () => {
       victim_affiliation: affiliation,
     };
 
-    // console.log({ payload });
+    console.log({ payload });
     // const formData = new FormData();
 
     try {
