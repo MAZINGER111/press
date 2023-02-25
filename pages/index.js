@@ -18,7 +18,7 @@ export default function Home() {
           width="95%"
           height="600px"
           src="https://lookerstudio.google.com/embed/reporting/8dc49a87-840f-4d63-ad6d-67182c3b8421/page/p_527mnxcq2c"
-          frameborder="0"
+          // frameborder="0"
           style={{ border: "0", margin: "0px auto" }}
           allowFullScreen={true}
         ></iframe>
