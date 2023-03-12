@@ -1,8 +1,9 @@
-import DashboardLayout from "../../components/DashboardLayout"
+import DashboardLayout from "../../components/DashboardLayout";
+import { Login } from "../../components/login";
 const Dashboard = () => (
-    <DashboardLayout>
-        
-    </DashboardLayout>
-)
+  <DashboardLayout>
+    <Login />
+  </DashboardLayout>
+);
 
-export default Dashboard
+export default Dashboard;
